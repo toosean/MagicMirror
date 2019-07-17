@@ -75,3 +75,6 @@ Temporary Items
 *.orig
 *.rej
 *.bak
+
+# 忽略 windows 下的快捷启动
+/run-start.bat
