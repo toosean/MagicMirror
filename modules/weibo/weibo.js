@@ -4,10 +4,15 @@ Module.register("weibo", {
 	defaults: {
 		text: "Hello  World!",
 		tableClass: "small",
+		updateInterval: 60000 //1 min
 	},
 
 	start:function(){
 		this.titles = [];
+		this.request();
+		setInterval(this.request.bind(this), this.config.updateInterval);
+	},
+	request:function(){
 		this.sendSocketNotification('WEIBO_FETCH',{});
 	},
 
@@ -26,8 +31,8 @@ Module.register("weibo", {
 
 		}else{
 
-			var maxLength = 30;
-			var startFade = 25;
+			var maxLength = 20;
+			var startFade = 15;
 
 			for(var i = 0;i<titles.length;i++)
 			{
@@ -40,6 +45,7 @@ Module.register("weibo", {
 				tr.appendChild(tdicon);
 
 				var td = document.createElement("td");
+				td.className = "small";
 				td.innerHTML = titles[i];
 				td.style.paddingLeft = "6px";
 				tr.appendChild(td);

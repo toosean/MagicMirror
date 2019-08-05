@@ -1,0 +1,15 @@
+{
+  "name": "dht11sensor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dht11sensor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
+    "mqtt": "^3.0.0"
+  }
+}

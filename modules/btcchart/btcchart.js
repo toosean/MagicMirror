@@ -5,15 +5,21 @@ Module.register("btcchart", {
         tableClass: "small",
         granularity: 3600,
         productId: "BTC-USD", //https://api.pro.coinbase.com/products/
+        updateInterval : 600000 //10 mins
 	},
 
 	start:function(){
+
         this.payload = null;
+        this.request();
+        setInterval(this.request.bind(this), this.config.updateInterval);
+    },
+
+    request:function(){
         this.sendSocketNotification('BTC_CHART_FETCH',{
             productId : this.config.productId,
             granularity : this.config.granularity
         });
-        
     },
 
 
