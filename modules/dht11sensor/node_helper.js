@@ -18,19 +18,19 @@ module.exports = NodeHelper.create({
     },
     
     startRead: function(mqttServer){
-
+        
         if(this.mqttClient == null){
+
             this.mqttClient = mqtt.connect(mqttServer);
             this.mqttClient.on('connect',this.mqttClientConnect.bind(this));
             this.mqttClient.on('message',this.mqttClientMessage.bind(this));
             this.mqttClient.on('close',this.mqttClientClose.bind(this));
-        }
 
-        if(!this.mqttClient.connected){
+        }else if(!this.mqttClient.connected){
+
             this.mqttClient.reconnect();
+            
         }
-
-
     },
 
     mqttClientConnect:function(){

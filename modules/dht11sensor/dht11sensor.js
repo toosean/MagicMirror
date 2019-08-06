@@ -50,7 +50,7 @@ Module.register("dht11sensor", {
             wrapper.appendChild(span);
 
             var icon = "";
-            debugger;
+
             if(this.payload.humidity >= 50 && this.payload.humidity <= 60 && this.payload.temperature >= 18 && this.payload.temperature <= 26){
                 icon = "far fa-smile-wink"
             }else if(this.payload.humidity >= 45 && this.payload.humidity <= 65 && this.payload.temperature >= 16 && this.payload.temperature <= 28){
