@@ -3,7 +3,7 @@ Module.register("dht11sensor", {
 	// Default module config.
 	defaults: {
         mqttServer:null,
-        mqttTopic: "home/liveroom/dht11",
+        mqttTopic: "Sensor/DHT11/+",
         updateInterval : 30000 //30sec
 	},
 
